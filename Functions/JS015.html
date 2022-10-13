@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <style>
+        html{
+            display: flex;
+            height: 100vh;
+            margin: 0;
+        }
+        body{
+            background: rgb(94, 206, 206);
+            flex-grow: 1;
+            margin: 0;
+            font-family: sans-serif;
+            padding: 1em;  
+            color: white;  
+        }
+
+        h1{
+            font-size: 18px;
+        }
+
+        .basic{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        #btnvel{
+            padding: 0.7em;
+            margin: 3px;
+        }
+
+        p{
+            margin-right: 10px;
+        }
+
+
+        
+    </style>
+</head> 
+<body>
+    <h1></h1>
+    <div class="basic">
+        
+        <p><input type="number" name="n1"id="n1"></p>
+        <input type="button" value="Check" id="btntab" onclick="chec()">
+    </div>
+    <div id="res"></div>
+    
+    <script>
+
+        var tab = document.querySelector('#n1')
+        var res = document.querySelector('#res')
+
+        let valores = [1,3,5]
+       
+
+        function chec(){
+            n = Number(tab.value)
+            valores.push()
+            
+        }
+        
+    </script>   
+</body>
+</html>

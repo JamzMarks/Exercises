@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <style>
+        html{
+            display: flex;
+            height: 100vh;
+            margin: 0;
+        }
+        body{
+            background: linear-gradient(90deg, rgb(94, 206, 206) 50%, orange); 
+            color:white;
+            flex-grow: 1;
+            margin: 0;
+            font-family: sans-serif;
+            padding: 1em;   
+            color: white; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <script>
+        var nome = String(window.prompt("Qual seu nome?"))
+       var n1 = Number(window.prompt("Digite seu salário atual em R$"))
+       document.write(`Olá, ${nome.toUpperCase()}. Seja bem vindo!<br>`)
+       document.write(`Seu salário é ${n1.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}<br>`)
+
+       var dol = n1 / 5.26
+       document.write(`Seu salário em ${dol.toLocaleString('pt-BR', {style: 'currency', currency: 'USD'})}<br>`)
+
+       var eu = n1 / 6.01
+       document.write(`Seu salário em ${eu.toLocaleString('pt-BR', {style: 'currency', currency: 'EUR'})}<br>`)
+
+       var apeso = n1 / 0.050
+       document.write(`Seu salário em ${apeso.toLocaleString('pt-BR', {style: 'currency', currency: 'ARS'})}<br>`)
+       
+       var l = n1 * 0.1406469760900141
+       document.write(`Seu salário em ${l.toLocaleString('pt-BR', {style: 'currency', currency: 'GBP'})}<br>`)
+    </script>   
+</body>
+</html>

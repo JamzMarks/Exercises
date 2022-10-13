@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <style>
+        html{
+            display: flex;
+            height: 100vh;
+            margin: 0;
+        }
+        body{
+            background: rgb(94, 206, 206);
+            flex-grow: 1;
+            margin: 0;
+            font-family: sans-serif;
+            padding: 1em;  
+            color: white;  
+        }
+
+        h1{
+            font-size: 18px;
+        }
+
+        .basic{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        #btnvel{
+            padding: 0.7em;
+            margin: 3px;
+        }
+
+
+        
+    </style>
+</head> 
+<body>
+    <h1>DETRAN</h1>
+    <div class="basic">
+        
+        <p>Velocidade do Carro <input type="number" name="vel "id="vel">Km/h</p>
+        <input type="button" value="Verificar" id="btnvel" onclick="calcular()">
+    </div>
+    <div id="res"></div>
+    
+    <script>
+       
+        function calcular(){
+            var txtvel = document.querySelector('#vel')
+            var res = document.querySelector('#res')
+            vel = Number(txtvel.value)
+            if(vel < 80 && vel > 20 ){
+                res.innerHTML = `<p>Sua velocidade é <strong>${vel}km/h</strong>.</p>`  
+            }else{
+                if(vel > 20){
+                    res.innerHTML = `<p>Você estava acima do limite máximo permitido <strong>${vel}km/h</strong>. Você foi multado!<p>`
+                }else{
+                    res.innerHTML = `<p>Você estava abaixo do limite mínimo permitido <strong>${vel}km/h</strong>. Você foi multado!<p>`
+                }
+            }
+        }
+    </script>   
+</body>
+</html>

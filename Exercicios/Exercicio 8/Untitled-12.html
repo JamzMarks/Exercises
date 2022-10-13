@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id='cronometro'>
+    <button id='iniciar'>Iniciar</button>
+    <button id='pausar'>Pausar</button>
+    <button id='parar'>Parar</button>
+</body>
+<script>
+    (function(){
+        const $cronometro = document.querySelector('#cronometro')
+        const $iniciar = document.querySelector('#iniciar')
+        const $pausar = document.querySelector('#pausar')
+        const $parar = document.querySelector('#parar')
+
+        $iniciar.addEventListener('click', iniciar)
+        $pausar.addEventListener('click', pausar)
+        $parar.addEventListener('click', parar)
+
+        var msClickIniciar = 0
+        var msClickPausar = 0
+        var msTempoDecorrido = 0
+        var intervalo = null
+        var exec = false
+
+        function iniciarCronometro(tempoDecorrido){
+            var _ms = tempoDecorrido || 0
+            intervalo = setInterval(function(){
+                var msAgora = Date.now()
+                var diferenca = msAgora - msClickIniciar
+                $cronometro.value = formatarMs(diferenca + _ms)
+            }, 100)
+        }
+                                            
+        function iniciar(){
+            if(exec) return
+            parar()
+            msClickIniciar = Date.now()
+            iniciarCronometro()
+            exec = true
+        }
+        
+        function pausar(){
+            if(!$cronometro.value) return
+            if(exec){
+                clearInterval(intervalo)
+                msClickPausar = Date.now()
+                msTempoDecorrido += (msClickPausar - msClickIniciar)
+            }else{
+                msClickIniciar = Date.now()
+                iniciarCronometro(msTempoDecorrido)
+            }
+
+            exec = !exec
+        }
+        function parar(){
+            msTempoDecorrido = 0
+            msClickIniciar = 0
+            msClickPausar = 0
+            exec = false
+            clearInterval(intervalo)
+            $cronometro.value = ''
+        }
+
+        function formatarMs(ms){
+            const SEC = 1000
+            const MIN = 60 * SEC
+            
+            let m = parseInt(ms/MIN) 
+            let s = parseInt(ms/SEC)
+            let c = ms - (s * SEC)
+
+            if(ms < SEC){
+                return ms
+            }else if(ms < MIN){
+                return `${s}:${c}`
+            }else{             
+                // return m + ':' + formatarMs(ms - m * MIN)
+                return `${m}:${formatarMs(ms - m * MIN)}`
+            }
+                
+        }
+    })()
+</script>
+</html>

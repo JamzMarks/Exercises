@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <style>
+        html{
+            display: flex;
+            height: 100vh;
+            margin: 0;
+        }
+        body{
+            background: rgb(94, 206, 206);
+            flex-grow: 1;
+            margin: 0;
+            font-family: sans-serif;
+            padding: 1em;  
+            color: white;  
+        }
+
+        h1{
+            font-size: 18px;
+        }
+
+        .basic{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        #btnvel{
+            padding: 0.7em;
+            margin: 3px;
+        }
+
+        p{
+            margin-right: 10px;
+        }
+
+
+        
+    </style>
+</head> 
+<body>
+    <h1>CALCULADORA</h1>
+    <div class="basic">
+        
+        <p>Teste <input name="n1"id="n1"></p>
+        <input type="button" value="Testar" id="btntab" onclick="testar()">
+    </div>
+    <div id="res"></div>
+    
+    <script>
+        var in1 = document.querySelector('#n1')
+        var res = document.querySelector('#res').innerHTML = valor
+        // n1 = Number(in1.value)
+        n1 = 8
+
+        function testar(){
+            switch (n1){
+            case 1:
+                alert('Olá mundo 1')
+                break
+            case 2:
+                alert('Olá mundo 2')
+                break
+            default:
+                alert('Olá mundo 3')
+            break
+        }
+        }
+    
+       
+    
+
+    </script>   
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <style>
+        html{
+            display: flex;
+            height: 100vh;
+            margin: 0;
+        }
+        body{
+            background: rgb(94, 206, 206);
+            flex-grow: 1;
+            margin: 0;
+            font-family: sans-serif;
+            padding: 1em;  
+            color: white;  
+        }
+
+        h1{
+            font-size: 18px;
+        }
+
+        form{
+            display: flex;
+            border: 1px solid black;
+            visibility: hidden;
+            padding: 5px;
+            transition: 3s;
+        }
+
+        #area{  
+            resize: none;
+            flex-grow: 1;
+            min-height: 100px;
+        }
+
+        #mensagem{
+            padding: 1em;
+            font-size: 16px;
+            background-color: rgba(32, 32, 32, 0.541);
+            visibility: hidden;
+        }
+
+
+        
+    </style>
+</head> 
+<body>
+    <input type="text" name="nome" id="nome">
+    <input type="button" value="iniciar" id="btNome" onclick="sNome()">
+    <h1 id="hnome">Digite seu nome</h1>
+    <form id="form1">
+        <textarea id="area" placeholder="Digite uma mensagem"></textarea>
+        <input type="button" id="bten" value="enviar" onclick="enviar()">
+    </form>
+
+    <div id="mensagem"></div>
+    <script>
+
+        var nome = document.querySelector('#nome')
+        var Btn = document.querySelector('#btNome')
+        var snom = document.querySelector('#hnome')
+
+        function sNome(){
+            n = String(nome.value)
+            snom.innerHTML = `Olá ${n}`
+            area.style.visibility = 'initial'
+        }
+
+        var area = document.querySelector('#form1')
+        var txtarea =  document.querySelector('#area')
+        var bten = document.querySelector('#bten')
+
+        var men = document.querySelector('#mensagem')
+
+        function enviar(){
+            msg = String(txtarea.value)
+            men.innerText = msg
+            men.style.visibility = 'initial'
+        }
+
+        
+        
+    </script>   
+</body>
+</html>

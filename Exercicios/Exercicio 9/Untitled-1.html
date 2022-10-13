@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <header class="menu">
+        <nav>
+            <ul>
+                
+            </ul>
+        </nav>
+    </header>
+    <canvas width="800" height="800"
+        style="background-color: rgb(19, 67, 129)">
+    </canvas>
+    <script> 
+        // var $menu = document.querySelector(".menu")
+        // window.addEventListener('scroll', setupNav)
+
+        // function setupNav(){
+        //     var pos = y()
+
+        //     if(pos > 150){
+        //         document.body.classList.add('fx')
+        //     }else{
+        //         document.body.classList.remove('fx')
+        //     }
+        // }
+
+        // function y(){
+        //     return window.pageYOffset
+        // }
+
+        const canvasElem = document.querySelector("canvas");
+
+        canvasElem.addEventListener("mousedown", function(e)
+        {
+            getMousePosition(canvasElem, e);
+        });
+
+        function getMousePosition(canvas, event) {
+
+            let cord = canvas.getBoundingClientRect();
+            let x = event.clientX - cord.left;
+            let y = event.clientY - cord.top;
+
+            console.log("Coordinate x: " + x, 
+                        "Coordinate y: " + y);
+        }
+      
+
+
+    </script>
+</body>
+</html>

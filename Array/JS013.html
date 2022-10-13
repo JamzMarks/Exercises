@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <style>
+        html{
+            display: flex;
+            height: 100vh;
+            margin: 0;
+        }
+        body{
+            background: rgb(94, 206, 206);
+            flex-grow: 1;
+            margin: 0;
+            font-family: sans-serif;
+            padding: 1em;  
+            color: white;  
+        }
+
+        h1{
+            font-size: 18px;
+        }
+
+        .basic{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        #btnvel{
+            padding: 0.7em;
+            margin: 3px;
+        }
+
+        p{
+            margin-right: 10px;
+        }
+
+
+        
+    </style>
+</head> 
+<body>
+    <h1>CALCULADORA</h1>
+    <div class="basic">
+        
+        <p>Tabuada: <input type="number" name="n1"id="n1"></p>
+        <p>Até <input type="number" name="n2"id="n2"></p>
+        <input type="button" value="Criar Tabuada" id="btntab" onclick="tabuada()">
+    </div>
+    <div id="res"></div>
+    
+    <script>
+
+      var i = 0
+
+      function tabuada(){
+          var tab = document.querySelector('#n1')
+            n1 = Number(tab.value)
+          var calc = document.querySelector('#n2')
+            n2 = Number(calc.value)
+
+          var res = document.querySelector('#res')
+          
+
+         do{
+            cal = n1 * i
+            res.innerHTML = `<p>${n1} x ${i} = ${cal}<p><br>`
+            i++
+        }while(i<=n2)
+      }
+
+    </script>   
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<h3>Differences between innerText, innerHTML and textContent.</h3>
+
+<p id="demo">   This element has extra spacing   and contains <span>a span element</span>.
+</p>
+
+<button onclick="getInnerText()">Get innerText</button>
+<button onclick="getHTML()">Get innerHTML</button>
+<button onclick="getTextContent()">Get textContent</button>
+
+<p id="demo"></p>
+
+<script>
+function getInnerText() {
+  alert(document.getElementById("demo").innerText);
+}
+
+function getHTML() {
+  alert(document.getElementById("demo").innerHTML);
+}
+
+function getTextContent() {
+  alert(document.getElementById("demo").textContent);
+}
+</script>
+
+</body>
+</html>

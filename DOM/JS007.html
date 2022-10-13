@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <style>
+        html{
+            display: flex;
+            height: 100vh;
+            margin: 0;
+        }
+        body{
+            background: rgb(94, 206, 206);
+            flex-grow: 1;
+            margin: 0;
+            font-family: sans-serif;
+            padding: 1em;  
+            color: white;  
+        }
+    </style>
+</head> 
+<body>
+    <h1>Olá Mundo</h1>
+    <form id="test">
+        <input id="nome" type="text" placeholder="Nome">
+    </form>
+
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry </p>
+    <p class="p1">Lorem Ipsum is simply dummy text of the printing and typesetting industry </p>
+    <p id="p1">Lorem Ipsum is simply dummy text of the printing and typesetting industry </p>
+    <p name="p1">Lorem Ipsum is simply dummy text of the printing and typesetting industry </p>
+    <div id="ngs"''>Testando</div>
+    <script>
+        var n1 = document.getElementsByTagName('p')[0]
+        n1.style.background = 'orange'
+        var n2 = document.getElementsByName('p1')[0]
+        n2.style.background = 'green'
+        // var n3 = document.getElementById('p1')
+        // n3.style.background = 'red'
+        var n4 = document.getElementsByClassName('p1')[0]
+        n4.style.background = 'blue'
+
+        var n5 = document.querySelector('div#ngs')
+        n5.style.background = "violet"
+
+        var n6 = document.querySelectorAll("p")
+        n6.style.background = 'black'
+    </script>   
+</body>
+</html>

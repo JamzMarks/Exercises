@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .container{
+            background-color: rgb(240, 240, 240);
+            margin: 10px 15%;
+        }
+
+        .c1{
+           display: flex;
+           justify-content: center;
+        }
+        button{
+            padding: 0.2em 0.88em;
+
+        }
+
+        /* publicação */
+
+    
+
+        .info{
+            display: flex;
+            background-color: rgb(98, 98, 248);
+            align-items: center;
+            padding: 10px;
+        }
+        .name{
+            font-size: 14px;
+            font-weight: 600;
+            margin: auto 10px;
+        }
+        .lperfil{
+            width: 38px;
+            height: 38px;
+        }
+        .infopub{
+            border: 1px solid rgba(0,0,0, 0.5);
+            background-color: white;
+            padding: 0.5em;
+
+        }
+
+    
+    </style>
+</head>
+<body>
+    <div class="container c1">
+        <textarea id='pub' placeholder="Faça um publicação"></textarea>
+        <button id="btn">+</button>
+        
+    </div>
+    <div class="container c2">
+        <div id="feed" class="feed">
+
+            <div class="pub">
+                <div class="info">
+                    <img src="img/perfil.png" alt="" class="lperfil">
+                    <h1 class="name">James Marques</h1>
+                </div>
+                <div class="infopub">
+                    <p class="main">Lorem ipson</p>
+                    <p class="main">Lorem ipson</p>
+                    <p class="main">Lorem ipson</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    
+    <script>
+        (function(){
+            const $btn = document.querySelector('#btn')
+            const $feed = document.querySelector('#feed')
+            let $txtpub = document.querySelector('#pub')
+
+            let $pub = new Object('p')
+
+            $btn.addEventListener('click', publicar)
+            $txtpub.addEventListener('keyup', function(e){
+            if(e.keyCode === 13){
+                publicar()
+            }
+        })
+
+            function publicar(){
+                let parf = document.createElement($pub)
+                let txt = document.createTextNode($txtpub.value)
+                
+                parf.appendChild(txt)
+                $feed.appendChild(parf)
+                $txtpub.value = ''
+                $txtpub.focus()
+            }
+        })()
+    </script>
+</body>
+</html>

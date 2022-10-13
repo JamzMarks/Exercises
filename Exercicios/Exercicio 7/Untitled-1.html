@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html { height: 100%; background: #000; display: flex; }
+        body { margin: auto; 
+        color: white}
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Roboto', sans-serif;
+        }
+        .box{
+            border-width: 3px;
+  border-style: solid;
+  border-image: 
+    linear-gradient(
+      to bottom, 
+      red, 
+      rgba(0, 0, 0, 0)
+    ) 1 100%;
+    padding: 1.5em;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p>hello</p>
+    </div>
+    <script>
+        (function(){
+        var arr = [1,2,3,'sad',5,'sad']
+
+        var numeros = arr.filter(function(el){
+            return typeof el === 'number'
+        })
+        console.log(numeros)
+
+        var Indeof = arr.indexOf('sad')
+        console.log('p: ', Indeof)
+
+        var Linde = arr.lastIndexOf('sad')
+        console.log('p2:', Linde)
+            
+        })()
+    
+
+    </script>
+</body>
+
+</html>

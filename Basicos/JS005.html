@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <style>
+        html{
+            display: flex;
+            height: 100vh;
+            margin: 0;
+        }
+        body{
+            background: linear-gradient(90deg, rgb(94, 206, 206) 50%, orange); 
+            color:white;
+            flex-grow: 1;
+            margin: 0;
+            font-family: sans-serif;
+            padding: 1em;   
+            color: white; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <script>
+        var n1 = Number(window.prompt("Digite um número:"))
+        var n2 = Number(window.prompt("Digite outro número:"))
+
+        document.write(`Seus números são ${n1} e ${n2}<br><br>`)
+
+        //var que vao utilizar valores de n
+        f1 = ((n1 + 8 - 3) * n2 / 4) ** 2
+        // f1 = 5 + 8 - 3 * 2 / 16
+        // f1 = 5 + 8 - 6 / 16
+        // f1 = 5 + 8 - 0,375
+         // f1 = 13 - 0,375
+         f2 = f1 - 1.25
+         f1+= 1.25
+        
+
+        document.write(`Margem de erro é de ${f2} até ${f1}<br>`)
+        
+    </script>   
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <style>
+        html{
+            display: flex;
+            height: 100vh;
+            margin: 0;
+        }
+        body{
+            background: linear-gradient(90deg, rgb(94, 206, 206) 50%, orange); 
+            color:white;
+            flex-grow: 1;
+            margin: 0;
+            font-family: sans-serif;
+            padding: 1em;   
+            color: white; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <script>
+       var n1 = Number(window.prompt("Digite seu ultimo salário"))
+       var n2 = Number(window.prompt("Digite seu salário atual"))
+       var m = (n1 + n2)/2 
+       document.write(`Sua média salarial é ${m.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}!`)
+    </script>   
+</body>
+</html>

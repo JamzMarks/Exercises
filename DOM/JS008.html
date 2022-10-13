@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <style>
+        html{
+            display: flex;
+            height: 100vh;
+            margin: 0;
+        }
+        body{
+            background: rgb(94, 206, 206);
+            flex-grow: 1;
+            margin: 0;
+            font-family: sans-serif;
+            padding: 1em;  
+            color: white;  
+        }
+
+        #bloco{
+            width: 150px;
+            height: 150px;
+            background: green;
+            text-align: center;
+            line-height: 150px;
+            margin-top: 30px;
+            cursor: pointer;
+            transition: 1.2s;
+
+        }
+    </style>
+</head> 
+<body>
+    <h1>Exercicio 8</h1>
+    <input type="number" name="t1" id="t1">+
+    <input type="number" name="t2" id="t2">
+    <br><br>
+    <input type="button"  value="+" onclick="somar()">
+    <input type="button"  value="-" onclick="sub()">
+    <input type="button"  value="x" onclick="mult()">
+    <input type="button"  value="/" onclick="dividir()">
+    <br><br>
+    <div id="res">Resultado</div>
+
+    <div id="bloco">teste</div>
+    <script>
+        var tn1 = document.getElementById('t1')
+        var tn2 = document.querySelector('#t2')
+        var res = document.querySelector('#res')      
+        
+        
+        function somar(){  
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1 + n2
+            res.innerHTML = s
+        }
+        function sub(){  
+            
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1 - n2
+            res.innerHTML = s
+        }
+        function mult(){  
+            
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1 * n2
+            res.innerHTML = s
+        }
+        function dividir(){  
+            
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1 / n2
+            res.innerHTML = s
+            
+        }
+
+        var blc = document.querySelector('#bloco')
+        blc.addEventListener('click', clicou)
+        blc.addEventListener('mouseout', saiu)
+        blc.addEventListener('mouseenter', entrou)
+
+        function clicou(){
+            blc.style.background = 'red'
+            blc.innerText = 'Clicou'
+        }
+
+        function saiu(){
+            blc.style.background = 'green'
+            blc.innerText = 'Saiu'
+        }
+
+        function entrou(){
+            blc.innerText = 'Entrou'
+        }
+
+        var nome = document.querySelector('#nome')
+        var nBtn = document.querySelector('#btNome')
+        var hnome = document.querySelector('#hnome')
+        function sNome(){
+            n = 
+            nnome.innerText = `Olá ${n}`
+        }
+        
+    </script>   
+</body>
+</html>

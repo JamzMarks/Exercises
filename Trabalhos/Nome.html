@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var nome = 'James Marques'
+
+        var nFormatado = formatarNome(nome)
+        console.log(nFormatado)
+
+        // function formatarNome(nome){
+        //     var lastSpace = nome.lastIndexOf(' ')
+        //     if(lastSpace <= 0){
+        //         return nome
+        //     }
+
+        //     var lastName = nome.slice(lastSpace)
+        //     console.log('UltimoNome', lastName)
+
+        //     var firstName = nome.slice(0, lastSpace)
+        //     console.log('posciçãoUltimoEspaço', lastSpace)
+
+        //    // return `${lastName}, ${firstName}`
+        //    return lastName + ', ' + firstName
+        // }
+
+        function formatarNome(nome){
+            let name = nome.split(' ')
+            if(name.length === 1){
+                return nome
+            }
+            console.log(name)
+
+            let last = name[name.length - 1] 
+            let first = nome.slice(0, nome.lastIndexOf(' ')) 
+
+           return `${last}, ${first}`
+        }
+        
+    </script>
+</body>
+</html>

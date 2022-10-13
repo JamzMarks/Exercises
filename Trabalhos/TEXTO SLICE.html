@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </p>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop 
+    </p>
+    <p>Lorem Ipsum is simply dummy text of 
+    </p>
+    <div id="mostrar"></div>
+
+    <script>
+        (function(){
+            const $txt = document.querySelectorAll('p')
+            const $res = document.querySelector('#mostrar')
+
+            // let txt = $txt.textContent
+            // let textFormatado = m200(txt)
+            // console.log(textFormatado)
+
+            // function m200(txt){
+            //     let nText = txt.slice(0,200)
+                
+            //     return `${nText}...`
+            // }
+
+            // let textF = cText($txt.textContent)
+
+            // console.log(textF)
+
+            // function cText(text){
+            //     let n1 = prompt('Até onde quer o texto?')
+            //     if(n1 <= 0){
+            //         alert('Tamanho invalido')
+            //         return $txt.textContent
+            //     } 
+            //     let nText = text.slice(0,n1)
+            //     return `${nText}...`
+            // }
+
+            let x = 0
+            while($txt[x]){
+                $txt[x].innerHTML = formatarTexto($txt[x].innerHTML)
+                x++;
+            }
+            function formatarTexto(texto){
+                let numCarac = 200
+                if(texto.length <= numCarac){
+                    return texto
+                }
+                let fText = texto.slice(0, numCarac)
+                return `${fText}...`
+            }
+        })()
+    </script>
+</body>
+</html>
